@@ -1,1 +1,309 @@
+# Introduction to Java
+
+## Chapter 1: Overview of Java
+
+### History and Evolution of Java
+Java was developed by **James Gosling** and his team at Sun Microsystems in the mid-1990s. It was officially released in 1995 as a core component of Sun Microsystems' Java platform. Initially called **"Oak"**, the language was later renamed Java, inspired by Java coffee.
+
+### Features of Java
+Java's success is attributed to its robust features, including:
+
+- **Platform Independence**: Write once, run anywhere (WORA).
+- **Object-Oriented**: Focus on real-world modeling through objects and classes.
+- **Robust**: Strong memory management and error-handling capabilities.
+- **Secure**: Provides a secure execution environment by avoiding pointer arithmetic.
+- **Multithreaded**: Supports concurrent execution of code.
+- **High Performance**: Utilizes Just-In-Time (JIT) compilation.
+- **Distributed**: Facilitates networking and distributed computing with ease.
+
+### Editions of Java
+1. **Java Standard Edition (Java SE)**: Core functionalities for standalone applications.
+2. **Java Enterprise Edition (Java EE)**: Tools for web-based and enterprise-level applications.
+3. **Java Micro Edition (Java ME)**: Tailored for mobile and embedded systems.
+
+---
+
+## Chapter 2: Setting Up the Environment
+
+### Installing JDK and JRE
+To develop and run Java programs, you need:
+1. **Java Development Kit (JDK)**: Includes the compiler (javac), tools, and libraries.
+2. **Java Runtime Environment (JRE)**: Provides libraries and JVM to run Java applications.
+
+#### Steps to Install:
+1. Download the JDK from [Oracle](https://www.oracle.com/java/technologies/javase-downloads.html) or [OpenJDK](https://openjdk.org/).
+2. Follow the installation wizard and set the environment variable `JAVA_HOME`.
+3. Verify installation by running:
+   ```bash
+   java -version
+   javac -version
+   ```
+
+### Setting Up an IDE
+Popular IDEs for Java development include:
+- **Eclipse**: A powerful, free IDE with extensive plugin support.
+- **IntelliJ IDEA**: A feature-rich IDE popular among professionals.
+- **Visual Studio Code**: A lightweight, customizable editor with Java extensions.
+
+#### First Program in Java
+1. Create a file `HelloWorld.java`.
+2. Add the following code:
+   ```java
+   public class HelloWorld {
+       public static void main(String[] args) {
+           System.out.println("Hello, World!");
+       }
+   }
+   ```
+3. Compile and run:
+   ```bash
+   javac HelloWorld.java
+   java HelloWorld
+   ```
+
+---
+
+## Chapter 3: Basics of Java Programming
+
+### Java Syntax and Structure
+A basic Java program consists of:
+1. **Class Declaration**: Defined using the `class` keyword.
+2. **Main Method**: Entry point of the program (`public static void main`).
+
+### Data Types, Variables, and Constants
+#### Data Types
+1. **Primitive Types**: `int`, `float`, `double`, `char`, `boolean`, etc.
+2. **Non-Primitive Types**: Strings, arrays, and objects.
+
+#### Variables
+Variables store data values. For example:
+```java
+int age = 25;
+String name = "John";
+```
+
+#### Constants
+Use the `final` keyword to define constants:
+```java
+final double PI = 3.14159;
+```
+
+### Operators and Expressions
+#### Types of Operators
+- **Arithmetic Operators**: `+`, `-`, `*`, `/`, `%`
+- **Relational Operators**: `==`, `!=`, `<`, `>`, `<=`, `>=`
+- **Logical Operators**: `&&`, `||`, `!`
+
+Example:
+```java
+int a = 10, b = 20;
+System.out.println(a + b); // Output: 30
+```
+
+---
+
+## Chapter 4: Control Flow Statements
+
+### If-Else and Switch Statements
+#### If-Else
+```java
+if (condition) {
+    // Code to execute if condition is true
+} else {
+    // Code to execute if condition is false
+}
+```
+Example:
+```java
+int age = 18;
+if (age >= 18) {
+    System.out.println("Eligible to vote");
+} else {
+    System.out.println("Not eligible to vote");
+}
+```
+
+#### Switch
+```java
+switch (variable) {
+    case value1:
+        // Code
+        break;
+    case value2:
+        // Code
+        break;
+    default:
+        // Default code
+}
+```
+
+### Loops
+#### For Loop
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+```
+
+#### While Loop
+```java
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+```
+
+#### Do-While Loop
+```java
+int i = 0;
+do {
+    System.out.println(i);
+    i++;
+} while (i < 5);
+```
+
+---
+
+## Chapter 5: Object-Oriented Programming (OOP)
+
+### Classes and Objects
+A **class** is a blueprint for objects. Objects are instances of classes.
+
+Example:
+```java
+class Car {
+    String color;
+    void drive() {
+        System.out.println("Car is driving");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.color = "Red";
+        myCar.drive();
+    }
+}
+```
+
+### Inheritance
+Inheritance allows a class to inherit properties from another class.
+```java
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food");
+    }
+}
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+```
+
+### Polymorphism
+Polymorphism allows one method to behave differently based on the object.
+
+#### Example:
+```java
+class Shape {
+    void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+```
+
+---
+
+## Chapter 6: Advanced Topics in Java
+
+### Exception Handling
+Java provides a robust mechanism for handling runtime errors using exceptions. 
+
+#### Try-Catch Block
+```java
+try {
+    int result = 10 / 0;
+    System.out.println(result);
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero!");
+}
+```
+
+#### Finally Block
+The `finally` block always executes, regardless of whether an exception occurs.
+```java
+try {
+    System.out.println("Try block");
+} catch (Exception e) {
+    System.out.println("Catch block");
+} finally {
+    System.out.println("Finally block");
+}
+```
+
+### Packages and Access Modifiers
+Java packages are used to group related classes, and access modifiers control visibility.
+
+#### Example:
+```java
+package mypackage;
+
+public class MyClass {
+    public void display() {
+        System.out.println("Hello from package!");
+    }
+}
+```
+
+### Collections Framework
+The Java Collections Framework provides classes like `ArrayList`, `HashMap`, and `HashSet` for data storage and manipulation.
+
+#### Example:
+```java
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Java");
+        list.add("Python");
+        System.out.println(list);
+    }
+}
+```
+
+---
+
+## Chapter 7: File I/O in Java
+
+### Reading and Writing Files
+Java provides classes like `FileReader`, `FileWriter`, `BufferedReader`, and `BufferedWriter` for file operations.
+
+#### Writing to a File
+```java
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("output.txt");
+            writer.write("Hello, Java File I/O!");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+#### Reading from a File
+
 
